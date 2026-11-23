@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{% assign post = site.data.writing[page.article_id] %}
+<article class="wrap post" id="{{ page.legacy_id }}">
+  <header class="post-heading">
+    <a class="back-link" href="/#writing">← All writing</a>
+    <p class="eyebrow">{{ post.topic | escape }} <span aria-hidden="true">/</span> <time datetime="{{ post.date }}">{{ post.display_date | escape }}</time></p>
+    <h1>{{ post.title | escape }}</h1>
+    <p class="byline">By <a href="/author/david/">David Watson</a></p>
+  </header>
+  <div class="prose">{{ content }}</div>
+  {% if page.tags.size > 0 %}
+  <nav class="post-tags" aria-label="Article topics">
+    {% for tag in page.tags %}<a href="{{ tag.url }}">{{ tag.name | escape }}</a>{% endfor %}
+  </nav>
+  {% endif %}
+</article>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }}{% unless page.url == '/' %} | David Watson{% endunless %}</title>
+  <meta name="description" content="{{ page.description | default: 'David Watson is a senior engineering manager and software engineer. Read his writing and explore his work.' | escape }}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | default: 'Writing by David Watson.' | escape }}">
+  <meta property="og:type" content="{% if page.article_id %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="https://davidlwatsonjr.com{{ page.url | replace: 'index.html', '' }}">
+  <meta property="og:image" content="https://davidlwatsonjr.com/assets/david-watson.webp">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://davidlwatsonjr.com{{ page.url | replace: 'index.html', '' }}">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="David Writes Code" href="/feed/index.xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>David<span> Writes Code</span></a>
+      <nav aria-label="Main">
+        <a href="/#writing">Writing</a>
+        <a href="https://resume.davidlwatsonjr.com/">Résumé</a>
+        <a href="https://apps.davidlwatsonjr.com/">Apps</a>
+        <a href="https://github.com/davidlwatsonjr">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <span>David Watson</span>
+      <nav aria-label="Elsewhere">
+        <a href="https://www.linkedin.com/in/davidlwatsonjr/">LinkedIn</a>
+        <a href="/feed/index.xml">RSS feed</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

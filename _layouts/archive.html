@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<section class="wrap archive">
+  <a class="back-link" href="/#writing">← All writing</a>
+  <h1>{{ page.heading | escape }}</h1>
+  <h2 class="visually-hidden">Articles</h2>
+  <div class="writing-grid">
+    {% for slug in page.article_ids %}
+      {% assign post = site.data.writing[slug] %}
+      {% include writing-card.html %}
+    {% endfor %}
+  </div>
+</section>

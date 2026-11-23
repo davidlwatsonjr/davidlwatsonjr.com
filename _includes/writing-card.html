@@ -1,0 +1,5 @@
+<article class="writing-card">
+  <p class="eyebrow">{{ post.topic | escape }} <span aria-hidden="true">/</span> <time datetime="{{ post.date }}">{{ post.display_date | escape }}</time></p>
+  <h3><a href="/{{ slug }}/">{{ post.title | escape }}</a></h3>
+  <p>{{ post.summary | escape }}</p>
+</article>
