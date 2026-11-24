@@ -1,0 +1,57 @@
+{% if canonical_path == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ site.url | append: '/#website' | jsonify }},
+      "url": {{ canonical_url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "alternateName": "David Watson"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": {{ site.url | append: '/#profile' | jsonify }},
+      "url": {{ canonical_url | jsonify }},
+      "isPartOf": { "@id": {{ site.url | append: '/#website' | jsonify }} },
+      "mainEntity": { "@id": {{ site.url | append: '/#david-watson' | jsonify }} }
+    },
+    {
+      "@type": "Person",
+      "@id": {{ site.url | append: '/#david-watson' | jsonify }},
+      "name": "David Watson",
+      "jobTitle": "Senior Engineering Manager",
+      "url": {{ canonical_url | jsonify }},
+      "image": {{ '/assets/david-watson.webp' | absolute_url | jsonify }},
+      "sameAs": [
+        "https://www.linkedin.com/in/davidlwatsonjr/",
+        "https://github.com/davidlwatsonjr"
+      ]
+    }
+  ]
+}
+</script>
+{% elsif page.article_id %}
+{% assign article_data = site.data.writing[page.article_id] %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": {{ canonical_url | append: '#article' | jsonify }},
+  "url": {{ canonical_url | jsonify }},
+  "mainEntityOfPage": {{ canonical_url | jsonify }},
+  "headline": {{ page.title | jsonify }},
+  "description": {{ description | jsonify }},
+  "datePublished": {{ article_data.date | jsonify }},
+  "articleSection": {{ article_data.topic | jsonify }},
+  "author": {
+    "@type": "Person",
+    "@id": {{ site.url | append: '/#david-watson' | jsonify }},
+    "name": "David Watson",
+    "url": {{ '/' | absolute_url | jsonify }}
+  },
+  "isPartOf": { "@id": {{ site.url | append: '/#website' | jsonify }} }
+}
+</script>
+{% endif %}

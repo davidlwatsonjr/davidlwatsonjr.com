@@ -36,8 +36,24 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.12; overflow-wrap: anywhe
 img { display: block; max-width: 100%; height: auto; }
 code, pre { font-family: var(--mono); }
 .wrap { width: min(75rem, calc(100% - clamp(2rem, 9vw, 8rem))); margin-inline: auto; }
-.skip-link { position: absolute; inset: .75rem auto auto .75rem; z-index: 1; translate: 0 -200%; padding: .5rem 1rem; background: var(--paper); }
-.skip-link:focus { translate: none; }
+.skip-link {
+  display: inline-block;
+  margin: .6rem clamp(1rem, 4.5vw, 4rem);
+  padding: .5rem .9rem;
+  border-radius: .25rem;
+  background: var(--surface);
+  font-weight: 700;
+}
+.skip-link:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .site-header { border-bottom: 1px solid var(--line); }
 .header-row, .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; column-gap: 1.5rem; }

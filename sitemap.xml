@@ -1,0 +1,16 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% assign sitemap_pages = site.pages | sort: 'url' %}
+  {% for entry in sitemap_pages %}
+    {% capture entry_path %}{% include canonical-path.html path=entry.url %}{% endcapture %}
+    {% assign entry_path = entry_path | strip %}
+    {% if entry_path == '/' or entry.article_id or entry.sitemap == true %}
+      {% unless entry.noindex or entry.layout == 'archive' %}
+  <url><loc>{{ entry_path | strip | absolute_url | xml_escape }}</loc></url>
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+</urlset>
