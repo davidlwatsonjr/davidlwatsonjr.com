@@ -9,7 +9,10 @@ layout: null
     {% assign entry_path = entry_path | strip %}
     {% if entry_path == '/' or entry.article_id or entry.sitemap == true %}
       {% unless entry.noindex or entry.layout == 'archive' %}
-  <url><loc>{{ entry_path | strip | absolute_url | xml_escape }}</loc></url>
+  <url>
+    <loc>{{ entry_path | absolute_url | xml_escape }}</loc>
+    {% if entry.last_modified %}<lastmod>{{ entry.last_modified | xml_escape }}</lastmod>{% endif %}
+  </url>
       {% endunless %}
     {% endif %}
   {% endfor %}

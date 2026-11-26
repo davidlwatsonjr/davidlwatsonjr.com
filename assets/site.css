@@ -69,7 +69,7 @@ code, pre { font-family: var(--mono); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(13rem, 23rem); gap: clamp(2.15rem, 7vw, 7.25rem); align-items: center; padding-block: clamp(3rem, 8vw, 6.25rem); }
 .eyebrow { color: var(--link); font: 650 .875rem/1.55 var(--mono); letter-spacing: .055em; text-transform: uppercase; }
 .eyebrow span { margin-inline: .3em; }
-.hero .eyebrow, .hero h1 span { color: var(--accent); }
+.hero .eyebrow { color: var(--accent); }
 .hero h1 { margin-block: .7rem 1rem; font-size: clamp(3.15rem, 8.1vw, 7.05rem); font-weight: 400; letter-spacing: -.055em; }
 .intro-copy { max-width: 34ch; color: var(--hero-muted); font-size: clamp(1.12rem, 1.8vw, 1.35rem); }
 .hero-links { display: flex; flex-wrap: wrap; gap: .65rem 1.5rem; align-items: center; margin-top: 1.7rem; }
@@ -130,7 +130,7 @@ code, pre { font-family: var(--mono); }
   :root { color-scheme: light; --paper: white; --text: black; --muted: #363636; --link: #243d30; }
   .site-header, .site-footer, .skip-link, .hero-links, .back-link, .portrait { display: none; }
   .hero { background: white; color: black; }
-  .hero .eyebrow, .hero h1 span, .intro-copy { color: black; }
+  .hero .eyebrow, .intro-copy { color: black; }
   .hero-grid { display: block; }
   .wrap { width: 100%; }
 }

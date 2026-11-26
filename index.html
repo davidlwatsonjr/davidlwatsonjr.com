@@ -1,20 +1,20 @@
 ---
 layout: default
-title: David Watson | Senior Engineering Manager and Software Engineer
-description: David Watson, senior engineering manager and software engineer. Browse his apps, read his posts, and explore his engineering experience.
+title: David Lee Watson Jr. | Engineering Manager & Software Engineer
+last_modified: "2026-11-26"
 ---
 <section class="hero" aria-labelledby="intro-title">
   <div class="wrap hero-grid">
     <div class="intro">
-      <p class="eyebrow">Senior Engineering Manager</p>
-      <h1 id="intro-title">David Watson<span>.</span></h1>
-      <p class="intro-copy">I lead engineering teams and build software for the web. Explore my work in engineering leadership, the apps I build, and my writing on web development.</p>
+      <p class="eyebrow">{{ site.data.profile.job_title | escape }}</p>
+      <h1 id="intro-title">{{ site.data.profile.name | escape }}</h1>
+      <p class="intro-copy">I lead software engineering teams and build web apps as a full-stack developer. Explore my work in engineering leadership and read my posts on software development.</p>
       <div class="hero-links">
-        <a class="primary-link" href="https://resume.davidlwatsonjr.com/">View résumé</a>
+        <a class="primary-link" href="{{ site.data.profile.resume_url }}">View my resume</a>
       </div>
     </div>
     <figure class="portrait">
-      <img src="/assets/david-watson.webp" alt="David Watson" width="400" height="400" fetchpriority="high">
+      <img src="{{ site.data.profile.image }}" alt="{{ site.data.profile.name | escape }}" width="400" height="400" fetchpriority="high">
     </figure>
   </div>
 </section>

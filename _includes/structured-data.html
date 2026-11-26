@@ -8,25 +8,33 @@
       "@id": {{ site.url | append: '/#website' | jsonify }},
       "url": {{ canonical_url | jsonify }},
       "name": {{ site.title | jsonify }},
-      "alternateName": "David Watson"
+      "alternateName": {{ profile.name | jsonify }}
     },
     {
       "@type": "ProfilePage",
       "@id": {{ site.url | append: '/#profile' | jsonify }},
       "url": {{ canonical_url | jsonify }},
+      "dateModified": {{ page.last_modified | jsonify }},
       "isPartOf": { "@id": {{ site.url | append: '/#website' | jsonify }} },
       "mainEntity": { "@id": {{ site.url | append: '/#david-watson' | jsonify }} }
     },
     {
       "@type": "Person",
       "@id": {{ site.url | append: '/#david-watson' | jsonify }},
-      "name": "David Watson",
-      "jobTitle": "Senior Engineering Manager",
+      "name": {{ profile.name | jsonify }},
+      "alternateName": {{ profile.alternate_names | jsonify }},
+      "jobTitle": {{ profile.job_title | jsonify }},
+      "description": {{ description | jsonify }},
       "url": {{ canonical_url | jsonify }},
-      "image": {{ '/assets/david-watson.webp' | absolute_url | jsonify }},
+      "image": {{ profile.image | absolute_url | jsonify }},
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": {{ profile.resume_url | append: '#profile' | jsonify }},
+        "url": {{ profile.resume_url | jsonify }}
+      },
       "sameAs": [
-        "https://www.linkedin.com/in/davidlwatsonjr/",
-        "https://github.com/davidlwatsonjr"
+        {{ profile.linkedin_url | jsonify }},
+        {{ profile.github_url | jsonify }}
       ]
     }
   ]
@@ -48,7 +56,7 @@
   "author": {
     "@type": "Person",
     "@id": {{ site.url | append: '/#david-watson' | jsonify }},
-    "name": "David Watson",
+    "name": {{ profile.name | jsonify }},
     "url": {{ '/' | absolute_url | jsonify }}
   },
   "isPartOf": { "@id": {{ site.url | append: '/#website' | jsonify }} }
