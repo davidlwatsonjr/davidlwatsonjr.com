@@ -79,6 +79,11 @@ code, pre { font-family: var(--mono); }
 .portrait { position: relative; isolation: isolate; margin: .45rem .65rem .65rem .2rem; }
 .portrait::after { content: ""; position: absolute; inset: .72rem -.72rem -.72rem .72rem; z-index: -1; border: 1px solid #aabd82; }
 .portrait img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.error-page h1 { font-size: clamp(2.75rem, 6.4vw, 5.6rem); }
+.error-actions { gap: .65rem; }
+.error-actions .primary-link { border: 1px solid var(--accent); }
+.error-link { padding: .5rem 1rem; border: 1px solid var(--hero-muted); border-radius: .25rem; color: var(--hero-text); text-decoration: none; }
+.error-link:hover { background: var(--hero-text); color: var(--hero); }
 .writing, .archive, .post { padding-block: clamp(2.5rem, 6vw, 5rem); }
 .apps { padding-top: clamp(2.5rem, 6vw, 5rem); }
 .section-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: .6rem 1.7rem; margin-bottom: 1.6rem; }
