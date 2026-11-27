@@ -34,14 +34,14 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/assets/site.css?v=4">
-  {% if canonical_path == '/' %}
+  {% if canonical_path == '/' or page.snowfall %}
   <link rel="stylesheet" href="/assets/snowfall.css">
   <script src="/assets/snowfall.js" defer></script>
   {% endif %}
   {% include structured-data.html %}
 </head>
 <body>
-  {% if canonical_path == '/' %}
+  {% if canonical_path == '/' or page.snowfall %}
   <canvas class="snowfall" aria-hidden="true"></canvas>
   {% endif %}
   <a class="skip-link" href="#main">Skip to content</a>
