@@ -88,13 +88,15 @@ code, pre { font-family: var(--mono); }
 .app-card:hover, .app-card:focus-visible { border-color: var(--link); }
 .app-card img { width: 100%; }
 .app-copy { padding: clamp(1rem, 2vw, 1.4rem); }
-.app-copy h3 { font-size: clamp(1.45rem, 2.55vw, 2rem); text-decoration: underline; }
+.app-copy h3 { font-size: clamp(1.45rem, 2.55vw, 2rem); }
 .app-copy p { margin-top: .5rem; color: var(--muted); }
 .section-heading p, .writing-card > p:last-child, .featured p:last-child, .byline { color: var(--muted); }
 .featured { display: grid; grid-template-columns: minmax(0, 1fr) minmax(8rem, 14rem); gap: 1.35rem; align-items: center; padding: clamp(1.25rem, 4vw, 2.5rem); background: var(--surface); border: 1px solid var(--line); border-left: .26rem solid var(--link); }
 .featured h3 { font-size: clamp(1.85rem, 3.3vw, 2.85rem); letter-spacing: -.035em; margin-block: .45rem .6rem; }
 .featured h3 code { font-size: .82em; letter-spacing: -.06em; }
-.featured h3 a, .writing-card h3 a { color: var(--text); }
+.featured h3 a, .writing-card h3 a { color: var(--text); text-decoration: none; }
+.featured h3 a:hover, .featured h3 a:focus-visible,
+.writing-card h3 a:hover, .writing-card h3 a:focus-visible { text-decoration-line: underline; }
 .stripe-art { display: grid; gap: .33rem; padding-inline: .25rem; }
 .stripe-art i { display: block; height: .75rem; border: 1px solid var(--line); border-radius: .12rem; }
 .stripe-art i:nth-child(odd) { background: var(--link); opacity: .7; }
