@@ -80,7 +80,18 @@ code, pre { font-family: var(--mono); }
 .portrait::after { content: ""; position: absolute; inset: .72rem -.72rem -.72rem .72rem; z-index: -1; border: 1px solid #aabd82; }
 .portrait img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .error-page h1 { font-size: clamp(2.75rem, 6.4vw, 5.6rem); }
-.error-actions { gap: .65rem; }
+.error-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: .65rem;
+  max-width: 26rem;
+}
+.error-actions a {
+  justify-content: center;
+  padding-inline: .65rem;
+  text-align: center;
+}
 .error-actions .primary-link { border: 1px solid var(--accent); }
 .error-link { padding: .5rem 1rem; border: 1px solid var(--hero-muted); border-radius: .25rem; color: var(--hero-text); text-decoration: none; }
 .error-link:hover { background: var(--hero-text); color: var(--hero); }
